@@ -24,8 +24,8 @@ def health():
     return jsonify({"status": "up"}), 200
 
 
-@app.route("/api/v1/details")
-def details():
+@app.route("/api/v1/info")
+def info():
     return jsonify(
         {
             "hostname": socket.gethostname(),

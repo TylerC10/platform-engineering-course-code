@@ -24,16 +24,5 @@ def health():
     return jsonify({"status": "up"}), 200
 
 
-@app.route("/api/v1/info")
-def info():
-    return jsonify(
-        {
-            "hostname": socket.gethostname(),
-            "time": datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
-            "message": "You are doing great, human! <3",
-        }
-    )
-
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

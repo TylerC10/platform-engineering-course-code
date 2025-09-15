@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: tylerc2621/platform-engineering-course
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: ad5a75
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

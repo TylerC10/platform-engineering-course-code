@@ -30,7 +30,7 @@ def details():
         {
             "hostname": socket.gethostname(),
             "time": datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
-            "message": "You are doing great, human! <3",
+            "message": "You are doing great, human!! <3",
         }
     )
 

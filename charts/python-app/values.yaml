@@ -1,8 +1,8 @@
 replicaCount: 1
 image:
-  repository: ricardoandre9707/python-app
+  repository: tylerc2621/platform-engineering-course
   pullPolicy: IfNotPresent
-  tag: ed7159
+  tag: latest
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

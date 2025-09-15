@@ -1,11 +1,14 @@
+# Service manifest for the Python Flask application
+# This creates a stable network endpoint to access your pods
+# Services provide load balancing and service discovery
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-app
+  name: python-app                    # Name of the service
 spec:
   selector:
-    app: python-app
+    app: python-app                   # Which pods to route traffic to (matches pod labels)
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 5000
+      port: 8080                      # Port the service listens on (what other services/ingress connect to)
+      targetPort: 5000                # Port on the pod to forward traffic to (where Flask runs)

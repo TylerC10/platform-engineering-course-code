@@ -1,21 +1,23 @@
+# Deployment manifest for the Python Flask application
+# This creates and manages the pods that run your application
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-app
+  name: python-app                    # Name of the deployment
   labels:
-    app: python-app
+    app: python-app                   # Label to identify this deployment
 spec:
-  replicas: 1
+  replicas: 1                         # Number of pod copies to run (1 for development)
   selector:
     matchLabels:
-      app: python-app
+      app: python-app                 # Which pods this deployment manages
   template:
     metadata:
       labels:
-        app: python-app
+        app: python-app               # Labels applied to pods created by this deployment
     spec:
       containers:
-      - name: python-app
-        image: ricardoandre9707/python-app:v2
+      - name: python-app              # Name of the container in the pod
+        image: tylerc2621/platform-engineering-course:latest  # Docker image to use
         ports:
-        - containerPort: 5000
+        - containerPort: 5000         # Port the Flask app listens on inside the container

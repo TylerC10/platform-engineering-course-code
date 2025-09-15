@@ -1,16 +1,20 @@
+# Ingress manifest for the Python Flask application
+# This creates HTTP/HTTPS routing rules from outside the cluster to your services
+# Ingress acts as a reverse proxy and load balancer for external traffic
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: python-app
+  name: python-app                    # Name of the ingress
 spec:
+  ingressClassName: nginx             # Specifies which ingress controller to use (NGINX in this case)
   rules:
   - host: "python-app.test.com"
-    http:
+    http:                             
         paths:
-        - path: /
-          pathType: Prefix
+        - path: /                     # URL path to match (root path matches everything)
+          pathType: Prefix            # How to match the path (Prefix means starts with /)
           backend:
             service:
-              name: python-app
+              name: python-app        # Which service to route traffic to
               port:
-                number: 8080
+                number: 8080          # Port on the service to connect to

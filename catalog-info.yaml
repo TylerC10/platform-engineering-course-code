@@ -5,6 +5,7 @@ metadata:
   description: Python app that displays time.
   annotations:
     github.com/project-slug: TylerC10/platform-engineering-course-code
+    backstage.io/techdocs-ref: dir:./docs
 spec:
   type: service
   owner: development
